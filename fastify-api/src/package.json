@@ -1,0 +1,22 @@
+{
+  "name": "fastify-api",
+  "version": "1.0.0",
+  "description": "fastify-api backend for cat-fight project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/nicolastrote/cat-fight.git",
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "mongoose",
+    "fastify"
+  ],
+  "author": "Nicolas Trote",
+  "license": "CC-BY-NC-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/nicolastrote/cat-fight/issues"
+  },
+  "homepage": "https://github.com/nicolastrote/cat-fight#readme"
+}

@@ -7,8 +7,8 @@ Best practises around a simple but attracting app where cats are fighting for ru
 
 ## Sources
 * REST API/NodeJS+Mongodb: 
-  * https://medium.com/better-programming/how-to-build-a-blazing-fast-graphql-api-with-node-js-mongodb-and-fastify-77fd5acd2998
-  * https://www.freecodecamp.org/news/how-to-build-blazing-fast-rest-apis-with-node-js-mongodb-fastify-and-swagger-114e062db0c9/
+  * Part1: https://www.freecodecamp.org/news/how-to-build-blazing-fast-rest-apis-with-node-js-mongodb-fastify-and-swagger-114e062db0c9/
+  * Part2: https://medium.com/better-programming/how-to-build-a-blazing-fast-graphql-api-with-node-js-mongodb-and-fastify-77fd5acd2998
 * GraphQL: https://medium.com/codingthesmartway-com-blog/creating-a-graphql-server-with-node-js-and-express-f6dddc5320e1
 * React: 
     * Bootstrap: https://medium.com/better-programming/how-to-make-a-responsive-app-with-react-and-bootstrap-938a22dac9d4
@@ -18,7 +18,7 @@ Best practises around a simple but attracting app where cats are fighting for ru
 
 ## Prior
 * here is tools I will use during this tutorial:
-    * iterm2: https://www.iterm2.com/downloads.html
+    * iTerm2: https://www.iterm2.com/downloads.html
     * brew: https://brew.sh/
     * `brew update && brew upgrade` (update for already installed packages)
     * `brew install nodejs yarn`
@@ -26,6 +26,21 @@ Best practises around a simple but attracting app where cats are fighting for ru
 * create a repo named "cat-fight" on git without the licence you need
 
 ## GITHUB
-* open iTerm and `cd ~ && mkdir Workspacecd && cd ~/Workspace`
-* `git init`
+* open iTerm2 and `cd ~ && mkdir Workspacecd && cd ~/Workspace`
+* `yarn init`
 * `git clone https://github.com/nicolastrote/cat-fight.git && cd cat-fight`
+
+## PART 1 : NodeJS/MongoDB/Mongoose/Fastify/Swagger/Postman
+source: https://www.freecodecamp.org/news/how-to-build-blazing-fast-rest-apis-with-node-js-mongodb-fastify-and-swagger-114e062db0c9/
+
+* `cd ~/Workspace/cat-fight/ && mkdir fastify-api`
+* `cd fastify-api && mkdir src && cd src`
+* `touch index.js && npm init`
+
+### Gitignore
+
+
+### Licences
+* `yarn global add yo && yarn global add generator-license-cc`
+* `yo license-cc`
+* I chose CC-BY-NC-SA-4.0 to protect mostly my sharing code
