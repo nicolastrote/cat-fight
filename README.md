@@ -38,8 +38,37 @@ source: https://www.freecodecamp.org/news/how-to-build-blazing-fast-rest-apis-wi
 * `touch index.js && npm init`
 
 ### Gitignore
+```shell script
+$ touch .gitignore && $ git config --global core.excludesFile ~/.gitignore
+$ nano .gitignore
+```
+and ignore those files/folders:
+```gitignore
+# ide
+.idea
 
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
 
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+```
 ### Licences
 * `yarn global add yo && yarn global add generator-license-cc`
 * `yo license-cc`
