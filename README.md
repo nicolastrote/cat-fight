@@ -15,3 +15,17 @@ Best practises around a simple but attracting app where cats are fighting for ru
     * Bootstrap: https://medium.com/javascript-in-plain-english/how-to-use-bootstrap-with-react-3bab2b35564e
     * GraphQL + Apollo: https://medium.com/future-vision/react-apollo-c952fdc6d2a7
     * Call Axios: https://medium.com/better-programming/the-modern-way-to-use-promise-based-http-requests-axios-hooks-f00791345a37 
+
+## Prior
+* here is tools I will use during this tutorial:
+    * iterm2: https://www.iterm2.com/downloads.html
+    * brew: https://brew.sh/
+    * `brew update && brew upgrade` (update for already installed packages)
+    * `brew install nodejs yarn`
+    * postman: https://www.getpostman.com/downloads/
+* create a repo named "cat-fight" on git without the licence you need
+
+## GITHUB
+* open iTerm and `cd ~ && mkdir Workspacecd && cd ~/Workspace`
+* `git init`
+* `git clone https://github.com/nicolastrote/cat-fight.git && cd cat-fight`
