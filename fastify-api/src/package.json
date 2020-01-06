@@ -4,6 +4,7 @@
   "description": "fastify-api backend for cat-fight project",
   "main": "index.js",
   "scripts": {
+    "start": "./node_modules/nodemon/bin/nodemon.js ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "git+https://github.com/nicolastrote/cat-fight.git",
@@ -13,10 +14,17 @@
     "mongoose",
     "fastify"
   ],
-  "author": "Nicolas Trote",
+  "author": "Nicolas Trote <nicolas.trote@gmail.com> (https://github.com/nicolastrote)",
   "license": "CC-BY-NC-SA-4.0",
   "bugs": {
     "url": "https://github.com/nicolastrote/cat-fight/issues"
   },
-  "homepage": "https://github.com/nicolastrote/cat-fight#readme"
+  "homepage": "https://github.com/nicolastrote/cat-fight#readme",
+  "dependencies": {
+    "boom": "^7.3.0",
+    "fastify": "^2.11.0",
+    "fastify-swagger": "^2.5.0",
+    "mongoose": "^5.8.4",
+    "nodemon": "^2.0.2"
+  }
 }
