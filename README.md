@@ -164,17 +164,17 @@ Robot-3T is an utility app that allows you to manage MongoDB graphically.
 * `brew cask install robot-3t`
 You can find it and run it in your mac launcher of apps, and create a new connexion with default values.
 
-#### MongoDb models
+### MongoDb models
 * create a new folder under src/ named "models"
 * and a file named : breed.js
 * look at breed.js file for the cat breed model details.
 
-#### Controller for breed cat model
+### Controller for breed cat model
 * create a new folder under src/ named "controllers"
 * and a file named : breedController.js
 * look at breedController.js file for the cat breed CRUD controller details.
 
-#### Routes for breed cat CRUD
+### Routes for breed cat CRUD
 * create a new folder under src/ named "routes"
 * and a file named : index.js
 * look at index.js file for routes details.
@@ -190,11 +190,50 @@ routes.forEach((route, index) => {
 [...]
 ```
 
-#### Now we are ready to test the REST API
+### Now we are ready to test the REST API
 * in Chrome we can test the URL: http://localhost:3000/api/breeds, because we have no data, it should reply en empty array: []
 * Open postman,  click on "new request", add in GET input "http://localhost:3000/api/breeds" and push "SEND" button.
 You should receive the same response, an empty array.
 ![alt text](https://github.com/nicolastrote/cat-fight/blob/master/assets/postman.jpg)
 At this state, you can save this request and put it in a collection named "cat-fights".
 
+nb: put breed information declaration as "RAW" + "JSON" in Postman.
 
+* GET ALL : GET + http://localhost:3000/api/breeds
+* GET ONE : GET + http://localhost:3000/api/breeds/[id]
+* POST : POST + http://localhost:3000/api/breeds + raw json info
+* DELETE : DELETE + http://localhost:3000/api/breeds/[id]
+* UPDATE: PUT + http://localhost:3000/api/breeds/[id] + new raw json info
+
+### SWAGGER
+* create a new folder under src/ named "config"
+* and a file named : swagger.js with :
+```javascript
+exports.options = {
+    routePrefix: '/documentation',
+    exposeRoute: true,
+    swagger: {
+        info: {
+            title: 'Fastify API',
+            description: 'Building a blazing fast REST API with Node.js, MongoDB, Fastify and Swagger',
+            version: '1.0.0'
+        },
+        externalDocs: {
+            url: 'https://swagger.io',
+            description: 'Find more info here'
+        },
+        host: 'localhost:3000',
+        schemes: ['http'],
+        consumes: ['application/json'],
+        produces: ['application/json']
+    }
+};
+```
+
+This code is an object with all options for fastify-swagger plugin.
+For giving this object, add the following in ~/src/index.js file:
+```
+await fastify.listen(3000)
+fastify.swagger()
+fastify.log.info(`listening on ${fastify.server.address().port}`)
+```
