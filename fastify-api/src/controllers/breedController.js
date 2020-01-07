@@ -28,8 +28,10 @@ exports.getSingleBreed = async (req, reply) => {
 exports.addBreed = async (req, reply) => {
     try {
         const breed = new BreedModel(req.body);
+        const { ...updateData } = breed;
+        const doesItAlreadyExist = await BreedModel.findOne({ name: updateData._doc.name });
 
-        return breed.save();
+        return doesItAlreadyExist ? new Error('Breed name already exist') : breed.save();
     } catch (err) {
         throw boom.boomify(err);
     }

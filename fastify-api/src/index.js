@@ -18,7 +18,16 @@ fastify.register(require('fastify-swagger'), swagger.options);
 // Connect to MongoDB with Mongoose
 mongoose
     .connect('mongodb://localhost/cat-fight')
-    .then(() => console.log('MongoDB connected...'))
+    .then(() => console.log(
+        '  /\\_/\\  \n'+
+        ' ( o o ) MongoDB connected...\n' +
+        '              _         __ _       _     _   \n' +
+        '     ___ __ _| |_      / _(_) __ _| |__ | |_ \n' +
+        '    / __/ _` | __|____| |_| |/ _` | `_ \\| __|\n' +
+        '   | (_| (_| | |______|  _| | (_| | | | | |_ \n' +
+        '    \\___\\__,_|\\__|    |_| |_|\\__, |_| |_|\\__|\n' +
+        '                             |___/           \n'
+    ))
     .catch(err => console.log(err));
 
 // Loop over each route

@@ -22,7 +22,7 @@ Best practises around a simple but attracting app where cats are fighting for ru
     * XCode from MacOs
     * brew: https://brew.sh/
     * `brew update && brew upgrade` (update for already installed packages)
-    * `brew install nodejs yarn`
+    * NodeJS and Yarn: `brew install nodejs yarn`
     * postman: `brew cask install postman`
 * create a repo named "cat-fight" on git without the licence you need
 
