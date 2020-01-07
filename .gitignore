@@ -1,11 +1,11 @@
 # idea
-.idea*
 .idea/
 
 # general assets
 assets/.DS_Store
 
 # dependencies
+fastify-api/src/node_modules
 /node_modules
 /.pnp
 .pnp.js

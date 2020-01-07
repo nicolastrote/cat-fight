@@ -195,3 +195,6 @@ routes.forEach((route, index) => {
 * Open postman,  click on "new request", add in GET input "http://localhost:3000/api/breeds" and push "SEND" button.
 You should receive the same response, an empty array.
 ![alt text](https://github.com/nicolastrote/cat-fight/blob/master/assets/postman.jpg)
+At this state, you can save this request and put it in a collection named "cat-fights".
+
+
