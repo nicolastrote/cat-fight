@@ -3,7 +3,7 @@ Project cat-fight
 
 Best practises around a simple but attracting app where cats are fighting for rule the world.
 
-![alt text](https://github.com/nicolastrote/cat-fight/blob/master/cat-fight.jpg)
+![alt text](https://github.com/nicolastrote/cat-fight/blob/master/cat-fight.jp2)
 
 ## Sources
 * REST API/NodeJS+Mongodb: 
@@ -23,7 +23,7 @@ Best practises around a simple but attracting app where cats are fighting for ru
     * brew: https://brew.sh/
     * `brew update && brew upgrade` (update for already installed packages)
     * `brew install nodejs yarn`
-    * postman: https://www.getpostman.com/downloads/
+    * postman: `brew cask install postman`
 * create a repo named "cat-fight" on git without the licence you need
 
 ## GITHUB
@@ -191,3 +191,7 @@ routes.forEach((route, index) => {
 ```
 
 #### Now we are ready to test the REST API
+* in Chrome we can test the URL: http://localhost:3000/api/breeds, because we have no data, it should reply en empty array: []
+* Open postman,  click on "new request", add in GET input "http://localhost:3000/api/breeds" and push "SEND" button.
+You should receive the same response, an empty array.
+![alt text](https://github.com/nicolastrote/cat-fight/blob/master/postman.jp2)
