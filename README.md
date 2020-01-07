@@ -3,7 +3,7 @@ Project cat-fight
 
 Best practises around a simple but attracting app where cats are fighting for rule the world.
 
-![alt text](https://github.com/nicolastrote/cat-fight/blob/master/assets/cat-fight.jp2)
+![alt text](https://github.com/nicolastrote/cat-fight/blob/master/assets/cat-fight.jpg)
 
 ## Sources
 * REST API/NodeJS+Mongodb: 
@@ -194,4 +194,4 @@ routes.forEach((route, index) => {
 * in Chrome we can test the URL: http://localhost:3000/api/breeds, because we have no data, it should reply en empty array: []
 * Open postman,  click on "new request", add in GET input "http://localhost:3000/api/breeds" and push "SEND" button.
 You should receive the same response, an empty array.
-![alt text](https://github.com/nicolastrote/cat-fight/blob/master/assets/postman.jp2)
+![alt text](https://github.com/nicolastrote/cat-fight/blob/master/assets/postman.jpg)
