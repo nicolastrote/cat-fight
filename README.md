@@ -36,7 +36,7 @@ source: https://www.freecodecamp.org/news/how-to-build-blazing-fast-rest-apis-wi
 
 * `cd ~/Workspace/cat-fight/ && mkdir fastify-api`
 * `cd fastify-api && mkdir src && cd src`
-* `touch index.js && npm init`
+* `touch index.js && yarn init`
 
 ### Gitignore
 ```shell script
@@ -122,7 +122,7 @@ start();
 ```
 
 * you can start the server:
- `npm start`
+ `yarn start`
 * and see the first result at http://localhost:3000/
 you should read : {"hello":"world"}
 
@@ -157,7 +157,7 @@ mongoose
     .catch(err => console.log(err));
 ```
 
-and run `npm start` if you stop it before. You will see the new message: MongoDB connected...
+and run `yarn start` if you stop it before. You will see the new message: MongoDB connected...
 
 #### Robot-3T Install
 Robot-3T is an utility app that allows you to manage MongoDB graphically.
@@ -236,4 +236,83 @@ For giving this object, add the following in ~/src/index.js file:
 await fastify.listen(3000)
 fastify.swagger()
 fastify.log.info(`listening on ${fastify.server.address().port}`)
+```
+
+## PART 2 : GRAPHQL
+source: https://medium.com/better-programming/how-to-build-a-blazing-fast-graphql-api-with-node-js-mongodb-and-fastify-77fd5acd2998
+
+### Refactoring connexion
+* create a new file under src/ named "server.js" : 
+```javascript
+// Require the fastify framework and instantiate it
+const fastify = require('fastify')({
+    logger: true
+});
+
+// Require external modules
+const mongoose = require('mongoose');
+
+// Connect to MongoDB with Mongoose
+mongoose
+    .connect('mongodb://localhost/cat-fight')
+    .then(() => console.log(
+        '  /\\_/\\  \n'+
+        ' ( o o ) MongoDB connected...\n' +
+        '              _         __ _       _     _   \n' +
+        '     ___ __ _| |_      / _(_) __ _| |__ | |_ \n' +
+        '    / __/ _` | __|____| |_| |/ _` | `_ \\| __|\n' +
+        '   | (_| (_| | |______|  _| | (_| | | | | |_ \n' +
+        '    \\___\\__,_|\\__|    |_| |_|\\__, |_| |_|\\__|\n' +
+        '                             |___/           \n'
+    ))
+    .catch(err => console.log(err));
+```
+* Now we need to delete this code in index.js, and import it : 
+```
+// Import Server
+const fastify = require('./server.js');
+```
+### MongoDB new model
+* At this step I need to put more models in the database. I will start with a cats, user and services tables :
+  * breeds: content all breed cat information
+  * cats: content information from a specific car which have owner(s)
+  * services: content information services for on cat (ie: birthday, vaccine date, ...)
+  * user: information from the connected user, which have a cat or not!
+  
+  Here is the simple model:
+  ![alt text](https://github.com/nicolastrote/cat-fight/blob/master/assets/schema.jpg)
+
+* add in the model src/models/breed : `cats_id: [{type: ObjectId}],`
+* create a src/models/cat.js file with:
+```javascript
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const ObjectId = mongoose.Schema.Types.ObjectId;
+
+const catSchema = new Schema({
+    alt_names: {type: String, required: false, max: 100},
+    breed_id: {type: ObjectId},
+    description: {type: String, required: true, max: 100},
+    id: {type: String, required: true, max: 100},
+    name: {type: String, required: true, max: 100},
+    users_id: [{type: ObjectId}],
+    wikipedia_url: {type: String, max: 100}
+});
+
+module.exports = mongoose.model('Cat', catSchema);
+```
+* create a src/models/catServcies.js file with:
+```javascript
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const ObjectId = mongoose.Schema.Types.ObjectId;
+
+const catServicesSchema = new Schema({
+    cat_id: {type: ObjectId},
+    date: {type: String, required: true, max: 100},
+    description: {type: String, required: true, max: 100},
+    name: {type: String, required: true, max: 100},
+});
+
+module.exports = mongoose.model('CatServices', catServicesSchema);
 ```

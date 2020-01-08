@@ -1,11 +1,12 @@
-// External Dependencies
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const breedSchema = new Schema({
     adaptability: {type: Number, required: true, main: 1, max: 5},
     affection_level: {type: Number, required: true, main: 1, max: 5},
     alt_names: {type: String, required: false, max: 100},
+    cats_id: [{type: ObjectId}],
     child_friendly: {type: Number, required: true, main: 1, max: 5},
     country_code: {type: String, required: true, max: 100},
     country_codes: {type: String, required: true, max: 100},
