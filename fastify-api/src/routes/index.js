@@ -1,5 +1,6 @@
 const breedController = require('../controllers/breedController');
 const catController = require('../controllers/catController');
+const userController = require('../controllers/userController');
 // Import Swagger documentation
 // const documentation = require('./documentation/carApi');
 
@@ -63,6 +64,33 @@ const routes = [
         method: 'DELETE',
         url: '/api/cats/:id',
         handler: catController.deleteCat
+    },
+    // USERS
+    {
+        method: 'GET',
+        url: '/api/users',
+        handler: userController.getUsers
+    },
+    {
+        method: 'GET',
+        url: '/api/users/:id',
+        handler: userController.getSingleUser
+    },
+    {
+        method: 'GET',
+        url: '/api/users/cats/:id',
+        handler: userController.getUsersCats
+    },
+    {
+        method: 'POST',
+        url: '/api/users',
+        handler: userController.addUser,
+        // schema: documentation.addCatSchema
+    },
+    {
+        method: 'DELETE',
+        url: '/api/users/:id',
+        handler: userController.deleteUser
     }
 ];
 

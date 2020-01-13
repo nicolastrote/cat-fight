@@ -23,7 +23,9 @@ Best practises around a simple but attracting app where cats are fighting for ru
     * brew: https://brew.sh/
     * `brew update && brew upgrade` (update for already installed packages)
     * NodeJS and Yarn: `brew install nodejs yarn`
-    * postman: `brew cask install postman`
+    * postman: 
+        * `brew cask install postman`
+        * import in postman collections from: cat-fight/fastify-api/postman/Backup.postman_dump.json
 * create a repo named "cat-fight" on git without the licence you need
 
 ## GITHUB

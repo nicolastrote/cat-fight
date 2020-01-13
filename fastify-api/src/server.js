@@ -19,7 +19,8 @@ mongoose
         '| (_| (_| | |______|  _| | (_| | | | | |_ \n' +
         ' \\___\\__,_|\\__|    |_| |_|\\__, |_| |_|\\__|\n' +
         '                          |___/           \n' +
-        ' Let\'s rules the world  \n'
+        ' Let\'s rule the world, but first.. \n' +
+        '   let\'s have some milk.\n'
     ))
     .catch(err => console.log(err));
 
