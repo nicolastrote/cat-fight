@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
-const breedSchema = new Schema({
+const breedModel = new Schema({
     adaptability: {type: Number, required: true, main: 1, max: 5},
     affection_level: {type: Number, required: true, main: 1, max: 5},
     alt_names: {type: String, required: false, max: 100},
@@ -39,7 +39,7 @@ const breedSchema = new Schema({
         imperial: {type: String, required: true, max: 100},
         metric: {type: String, required: true, max: 100}
     },
-    wikipedia_url: {type: String, required: true, max: 100}
+    wikipedia_url: {type: String, required: false, max: 100}
 });
 
-module.exports = mongoose.model('Breed', breedSchema);
+module.exports = mongoose.model('Breed', breedModel);

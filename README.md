@@ -301,7 +301,7 @@ const catSchema = new Schema({
 
 module.exports = mongoose.model('Cat', catSchema);
 ```
-* create a src/models/catServcies.js file with:
+* create a src/models/catServices.js file with:
 ```javascript
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
@@ -316,3 +316,4 @@ const catServicesSchema = new Schema({
 
 module.exports = mongoose.model('CatServices', catServicesSchema);
 ```
+
