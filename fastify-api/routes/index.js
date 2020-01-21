@@ -79,7 +79,7 @@ const routes = [
     {
         method: 'GET',
         url: '/api/users/cats/:id',
-        handler: userController.getUsersCats
+        handler: userController.getUserCats
     },
     {
         method: 'POST',
