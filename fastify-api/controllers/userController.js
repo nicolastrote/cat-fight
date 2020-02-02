@@ -24,26 +24,14 @@ exports.getSingleUser = async req => {
     }
 };
 
-// Get single user's cats
+// Get from single user Id all his cats
 exports.getUserCats = async req => {
     try {
         const id = req.params === undefined ? req.id : req.params.id;
         const user = await UserModel.findById(id);
-        // console.log('** user', user);
         const catIdList = user.cats_id;
-        console.log('** catIdList', catIdList);
 
-        let catList = catIdList.map(async (cat) => await CatModel.find({_id: cat._id}));
-
-        console.log('** catList', catList);
-
-        // const catJsonList = catIdList.reduce(async (catsJson, catId) => {
-        //     const catJson = await CatModel.find({_id: catId});
-        //     console.log('** catJson', catJson);
-        //     return catsJson.push(catJson);
-        // });
-
-        return catList;
+        return await Promise.all(catIdList.map(async (catId) => await CatModel.findById(catId)));
     } catch (err) {
         throw boom.boomify(err)
     }

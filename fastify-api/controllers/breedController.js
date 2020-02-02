@@ -35,7 +35,6 @@ exports.addBreed = async req => {
             return new Error('Breed name already exist')
         } else {
             const breedAdded = await breed.save();
-            console.log('breedAdded', breedAdded);
 
             return breedAdded;
         }
