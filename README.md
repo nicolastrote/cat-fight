@@ -161,9 +161,16 @@ mongoose
 
 and run `yarn start` if you stop it before. You will see the new message: MongoDB connected...
 
-#### Robot-3T Install
-Robot-3T is an utility app that allows you to manage MongoDB graphically.
-* `brew cask install robot-3t`
+##### Backup of Mongodb
+source : https://www.tutorialspoint.com/mongodb/mongodb_create_backup.htm
+```
+cd ~/Workspace/cat-fight/fastify-api/mongodb/
+sudo mongodump
+```
+
+#### Robo-3T Install
+Robo-3T is an utility app that allows you to manage MongoDB graphically.
+* `brew cask install robo-3t`
 You can find it and run it in your mac launcher of apps, and create a new connexion with default values.
 
 ### MongoDb models
