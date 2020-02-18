@@ -5,6 +5,28 @@ Best practises around a simple but attracting app where cats are fighting for ru
 
 ![alt text](https://github.com/nicolastrote/cat-fight/blob/master/assets/cat-fight.jpg)
 
+## Table of contents
+* [Sources](#sources)
+* [Prior](#prior)
+* [GITHUB](#github)
+* [PART 1 : NodeJS/MongoDB/Mongoose/Fastify/Swagger/Postman](#part-1-:-nodejs/mongodb/mongoose/fastify/swagger/postman)
+  * [Gitignore](#gitignore)
+  * [Licences](#licences)
+  * [Server packages](#server-packages)
+  * [Set up Nodemon](#set-up-nodemon)
+  * [Setup up the server](#setup-up-the-server)
+  * [MongoDB Setup](#mongodb-setup)
+    * [MongoDB Install](#mongodb-install)
+    * [Backup of Mongodb](#backup-of-mongodb)
+    * [Robo-3T Install](#robo-3t-install) 
+  * [MongoDB Models](#mongodb-models) 
+  * [Controller for breed cat model](#controller-for-breed-cat-model)
+  * [Routes for breed cat CRUD](#routes-for-breed-cat-CRUD)
+  * [Now we are ready to test the REST API](#now-we-are-ready-to-test-the-rest-api)
+  * [SWAGGER](#swagger)
+  * [Refactoring connexion](#refactoring-connexion)
+  * [MongoDB new model](#mongodb-new-model)
+
 ## Sources
 * REST API/NodeJS+Mongodb: 
   * Part1: https://www.freecodecamp.org/news/how-to-build-blazing-fast-rest-apis-with-node-js-mongodb-fastify-and-swagger-114e062db0c9/
@@ -173,7 +195,7 @@ Robo-3T is an utility app that allows you to manage MongoDB graphically.
 * `brew cask install robo-3t`
 You can find it and run it in your mac launcher of apps, and create a new connexion with default values.
 
-### MongoDb models
+### MongoDb Models
 * create a new folder under src/ named "models"
 * and a file named : breed.js
 * look at breed.js file for the cat breed model details.
@@ -247,10 +269,8 @@ fastify.swagger()
 fastify.log.info(`listening on ${fastify.server.address().port}`)
 ```
 
-## PART 2 : GRAPHQL
-source: https://medium.com/better-programming/how-to-build-a-blazing-fast-graphql-api-with-node-js-mongodb-and-fastify-77fd5acd2998
-
 ### Refactoring connexion
+source: https://medium.com/better-programming/how-to-build-a-blazing-fast-graphql-api-with-node-js-mongodb-and-fastify-77fd5acd2998
 * create a new file under src/ named "server.js" : 
 ```javascript
 // Require the fastify framework and instantiate it
