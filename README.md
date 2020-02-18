@@ -8,24 +8,24 @@ Best practises around a simple but attracting app where cats are fighting for ru
 ## Table of contents
 * [Sources](#sources)
 * [Prior](#prior)
-* [GITHUB](#github)
-* [PART 1 : NodeJS/MongoDB/Mongoose/Fastify/Swagger/Postman](#part-1-:-nodejs/mongodb/mongoose/fastify/swagger/postman)
+* [Github](#github)
+* [Backend Implementation](#backend-implementation)
   * [Gitignore](#gitignore)
   * [Licences](#licences)
-  * [Server packages](#server-packages)
-  * [Set up Nodemon](#set-up-nodemon)
-  * [Setup up the server](#setup-up-the-server)
+  * [Server Packages](#server-packages)
+  * [Set Up Nodemon](#set-up-nodemon)
+  * [Setup Up The Server](#setup-up-the-server)
   * [MongoDB Setup](#mongodb-setup)
     * [MongoDB Install](#mongodb-install)
-    * [Backup of Mongodb](#backup-of-mongodb)
+    * [Backup Of Mongodb](#backup-of-mongodb)
     * [Robo-3T Install](#robo-3t-install) 
   * [MongoDB Models](#mongodb-models) 
-  * [Controller for breed cat model](#controller-for-breed-cat-model)
-  * [Routes for breed cat CRUD](#routes-for-breed-cat-CRUD)
-  * [Now we are ready to test the REST API](#now-we-are-ready-to-test-the-rest-api)
-  * [SWAGGER](#swagger)
-  * [Refactoring connexion](#refactoring-connexion)
-  * [MongoDB new model](#mongodb-new-model)
+  * [Controller For Breed Cat Model](#controller-for-breed-cat-model)
+  * [Routes For Breed Cat CRUD](#routes-for-breed-cat-CRUD)
+  * [Testing The REST API](#testing-the-rest-api)
+  * [Swagger](#swagger)
+  * [Refactoring Connexion](#refactoring-connexion)
+  * [MongoDB New Model](#mongodb-new-model)
 
 ## Sources
 * REST API/NodeJS+Mongodb: 
@@ -50,13 +50,15 @@ Best practises around a simple but attracting app where cats are fighting for ru
         * import in postman collections from: cat-fight/fastify-api/postman/Backup.postman_dump.json
 * create a repo named "cat-fight" on git without the licence you need
 
-## GITHUB
+## Github
 * open iTerm2 and `cd ~ && mkdir Workspacecd && cd ~/Workspace`
 * `yarn init`
 * `git clone https://github.com/nicolastrote/cat-fight.git && cd cat-fight`
 
-## PART 1 : NodeJS/MongoDB/Mongoose/Fastify/Swagger/Postman
+## Backend Implementation 
 source: https://www.freecodecamp.org/news/how-to-build-blazing-fast-rest-apis-with-node-js-mongodb-fastify-and-swagger-114e062db0c9/
+
+We will implement NodeJS, MongoDB, Mongoose, Fastify, Swagge and Postman.
 
 * `cd ~/Workspace/cat-fight/ && mkdir fastify-api`
 * `cd fastify-api && mkdir src && cd src`
@@ -99,10 +101,10 @@ yarn-error.log*
 * `yo license-cc`
 * I chose CC-BY-NC-SA-4.0 to protect mostly my sharing code
 
-### Server packages
+### Server Packages
 * `yarn add nodemon mongoose fastify fastify-swagger boom`
 
-### Set up Nodemon
+### Set Up Nodemon
 - __nodemon__ : tool which reload nodejs server when you save new code
 - __mongoose__ : coding library for mongodb
 - __fastify__ : web framework to deliver small and smart nodejs services
@@ -118,7 +120,7 @@ yarn-error.log*
   },
 ```
 
-### Setup up the server
+### Setup Up The Server
 * add in index.js :
 ```javascript
 // Require the framework and instantiate it
@@ -183,7 +185,7 @@ mongoose
 
 and run `yarn start` if you stop it before. You will see the new message: MongoDB connected...
 
-##### Backup of Mongodb
+##### Backup Of Mongodb
 source : https://www.tutorialspoint.com/mongodb/mongodb_create_backup.htm
 ```
 cd ~/Workspace/cat-fight/fastify-api/mongodb/
@@ -200,12 +202,12 @@ You can find it and run it in your mac launcher of apps, and create a new connex
 * and a file named : breed.js
 * look at breed.js file for the cat breed model details.
 
-### Controller for breed cat model
+### Controller For Breed Cat Model
 * create a new folder under src/ named "controllers"
 * and a file named : breedController.js
 * look at breedController.js file for the cat breed CRUD controller details.
 
-### Routes for breed cat CRUD
+### Routes For Breed Cat CRUD
 * create a new folder under src/ named "routes"
 * and a file named : index.js
 * look at index.js file for routes details.
@@ -221,7 +223,7 @@ routes.forEach((route, index) => {
 [...]
 ```
 
-### Now we are ready to test the REST API
+### Testing The REST API
 * in Chrome we can test the URL: http://localhost:3000/api/breeds, because we have no data, it should reply en empty array: []
 * Open postman,  click on "new request", add in GET input "http://localhost:3000/api/breeds" and push "SEND" button.
 You should receive the same response, an empty array.
@@ -236,7 +238,7 @@ nb: put breed information declaration as "RAW" + "JSON" in Postman.
 * DELETE : DELETE + http://localhost:3000/api/breeds/[id]
 * UPDATE: PUT + http://localhost:3000/api/breeds/[id] + new raw json info
 
-### SWAGGER
+### Swagger
 * create a new folder under src/ named "config"
 * and a file named : swagger.js with :
 ```javascript
@@ -269,7 +271,7 @@ fastify.swagger()
 fastify.log.info(`listening on ${fastify.server.address().port}`)
 ```
 
-### Refactoring connexion
+### Refactoring Connexion
 source: https://medium.com/better-programming/how-to-build-a-blazing-fast-graphql-api-with-node-js-mongodb-and-fastify-77fd5acd2998
 * create a new file under src/ named "server.js" : 
 ```javascript
@@ -301,7 +303,7 @@ mongoose
 // Import Server
 const fastify = require('./server.js');
 ```
-### MongoDB new model
+### MongoDB New Model
 * At this step I need to put more models in the database. I will start with a cats, user and services tables :
   * breeds: content all breed cat information
   * cats: content information from a specific car which have owner(s)
