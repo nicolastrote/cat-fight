@@ -9,6 +9,7 @@ Best practises around a simple but attracting app where cats are fighting for ru
 * [Sources](#sources)
 * [Prior](#prior)
 * [Github](#github)
+
 * [Backend Implementation](#backend-implementation)
   * [Gitignore](#gitignore)
   * [Licences](#licences)
@@ -26,6 +27,8 @@ Best practises around a simple but attracting app where cats are fighting for ru
   * [Swagger](#swagger)
   * [Refactoring Connexion](#refactoring-connexion)
   * [MongoDB New Model](#mongodb-new-model)
+  
+* [Frontend Implementation](#frontend-implementation)  
 
 ## Sources
 * REST API/NodeJS+Mongodb: 
@@ -347,4 +350,24 @@ const catServicesSchema = new Schema({
 
 module.exports = mongoose.model('CatServices', catServicesSchema);
 ```
+
+## Frontend Implementation
+
+### React Basic Architecture
+* creation of the frontend folder named react-app:
+```
+ cd ~/Workspace/cat-fight/
+ yarn create react-app react-app --template typescript
+```
+* we will change the default port 3000 for 4200 in the package.json:
+```javascript
+    "start": "PORT=4200 react-scripts start",
+``` 
+
+### SCSS
+https://facebook.github.io/create-react-app/docs/adding-a-sass-stylesheet
+• yarn add node-sass
+• rename src/App.css to src/App.scss 
+• update src/App.tsx to import src/App.scss
+• This file and any other file will be automatically compiled if imported with the extension .scss.
 
