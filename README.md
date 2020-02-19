@@ -493,7 +493,7 @@ Prettier handling code formatting in IDE:
 - eslint-plugin-prettier: Runs prettier as an ESLint rule
 
 ```shell script
-yarn add -D prettier eslint-config-prettier eslint-plugin-prettier
+yarn add -D prettier eslint-config-prettier eslint-plugin-prettier pretty-quick
 nano .prettierrc.js
 ```
 
