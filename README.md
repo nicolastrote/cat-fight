@@ -514,8 +514,7 @@ add in package.json
 "lint-staged": {
   "src/**/*.{js,jsx,ts,tsx}": [
     "eslint",
-    "pretty-quick — staged",
-    "git add"
+    "pretty-quick — staged"  
   ]
 },
 ```
