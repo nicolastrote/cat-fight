@@ -32,6 +32,14 @@ Best practises around a simple but attracting app where cats are fighting for ru
   - [MongoDB New Model](#mongodb-new-model)
 
 - [Frontend Implementation](#frontend-implementation)
+  - [React Basic Architecture](#react-basic-architecture)
+  - [SCSS](#scss)
+  - [ESLint & Prettier](#eslint-&-prettier)
+    - [ESLint](#eslint)
+    - [Prettier](#prettier)
+    - [Activate ESLint In Webstorm](#activate-eslint-in-webstorm)
+    - [Pre-commit](#pre-commit)
+  - [Favicon](#favicon)     
 
 ## Sources
 
@@ -497,6 +505,9 @@ yarn add -D prettier eslint-config-prettier eslint-plugin-prettier pretty-quick
 nano .prettierrc.js
 ```
 
+#### Activate ESLint In Webstorm
+Go on : https://www.jetbrains.com/help/webstorm/eslint.html
+
 #### Pre-commit
 
 ```shell script
@@ -519,7 +530,7 @@ add in package.json
 },
 ```
 
-### favicon
+### Favicon
 
 You will have to create in public logos of 512px and 192px, and a favicon.ico (64/32/24/16px).
 And change informations about the website in index.html and manifest.json.
