@@ -446,7 +446,7 @@ We will controle the write rules in our application with :
 Let's install this:
 
 ```shell script
-yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react
+yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react @types/react
 ```
 
 Create react-app/.eslintrc.js and add inside :
@@ -469,6 +469,7 @@ module.exports = {
 
   // Extend WITH prettier
   extends: [
+    'plugin:react/recommended', // Usefull to avoid error of Modules import
     "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
     "plugin:prettier/recommended" // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
@@ -534,3 +535,9 @@ add in package.json
 
 You will have to create in public logos of 512px and 192px, and a favicon.ico (64/32/24/16px).
 And change informations about the website in index.html and manifest.json.
+
+## BootStrap Axios Translation
+```shell script
+yarn add -D axios bootstrap i18next i18next-browser-languagedetector i18next-xhr-backend querystring react-bootstrap react-i18next react-router-dom @types/react-router-dom
+```
+

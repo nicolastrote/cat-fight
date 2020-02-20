@@ -1,24 +1,24 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react';
-import logo from './logo.svg';
+import { Router, Route } from 'react-router-dom';
+import { createBrowserHistory as createHistory } from 'history';
+
+import HomePage from './containers/homePage/HomePage';
+import TopBar from './containers/topBar/TopBar';
+import SearchPage from './containers/searchPage/SearchPage';
+
 import './App.scss';
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-function App() {
+const history = createHistory();
+
+function App(): React.FunctionComponentElement<JSX.Element> {
+
     return (
         <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>Welcome to CatFight.</p>
-                <a
-                    className="App-link"
-                    href="https://github.com/nicolastrote/cat-fight"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    CatFight
-                </a>
-            </header>
+            <Router history={history}>
+                <TopBar />
+                <Route path="/" exact component={HomePage} />
+                <Route path="/search" exact component={SearchPage} />
+            </Router>
         </div>
     );
 }
