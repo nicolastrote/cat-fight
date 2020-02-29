@@ -1,13 +1,43 @@
-.link {
-  cursor: pointer;
+.home-page {
+    max-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        color: white;
+    }
 }
-.right {
-  padding: 20px;
+
+.box {
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12);
+
+    margin: 10vh auto;
+    min-height: 200px;
+    max-width: 80vw;
+    background: #3b3d40;
+    border-radius: 5px;
 }
-.image {
-  max-width: 400px;
-  text-align: center;
+
+.logo {
+    width: 80vmin;
+    pointer-events: none;
 }
-.sections {
-  margin-top: 20px;
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

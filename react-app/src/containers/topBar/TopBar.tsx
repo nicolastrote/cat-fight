@@ -18,12 +18,15 @@ function TopBar({ location }: any) {
 
     return (
         <Navbar bg="primary" expand="lg" variant="dark">
-            <Navbar.Brand href="#home">{t('New York Times App')}</Navbar.Brand>
+            <Navbar.Brand href="/">{t('Cat-Fight')}</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                     <Nav.Link href="/" active={pathname === '/'}>
                         {t('Home')}
+                    </Nav.Link>
+                    <Nav.Link href="/breeds" active={pathname === '/breeds'}>
+                        {t('Breeds')}
                     </Nav.Link>
                     <Nav.Link href="/search" active={pathname.includes('/search')}>
                         {t('Search')}
